@@ -1,0 +1,14 @@
+.container{
+    width: 300px;
+    margin:20px auto;
+}
+#input{
+    text-align: center;
+    margin-bottom: 4px;
+}
+.line {
+    width: 3px;
+    height: 5px;
+    background-color: rgb(255, 130, 0);
+    margin-left: 45px;
+}
