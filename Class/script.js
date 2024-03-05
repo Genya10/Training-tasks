@@ -70,3 +70,39 @@ class Apple extends Fruit {
 }
 const apple = new Apple('apple','green');
 console.log(apple.getDescription())
+
+//////////////////////////////////////////
+class Shape {
+    calculateArea(){
+    }
+}
+class Square extends Shape {
+    constructor(sideLength){
+        super(),
+        this.sideLength = sideLength
+    }
+    calculateArea(){
+        return this.sideLength * this.sideLength
+    }
+}
+const squareClass = new Square(20);
+console.log(squareClass.calculateArea());
+
+////////////////////////////////////////////////
+class Vehicle {
+    constructor(make,model){
+        this.make = make,
+        this.model = model
+    }
+}
+class Cars extends Vehicle{
+    constructor(make,model,color){
+        super(make,model),
+        this.color = color
+    }
+    getInfo(){
+        return `make:${this.make},model:${this.model},color:${this.color}`
+    }
+}
+const carsClass = new Cars('Francy','Reno', 'gray');
+console.log(carsClass.getInfo())
