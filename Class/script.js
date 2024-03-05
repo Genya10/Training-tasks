@@ -22,4 +22,32 @@ class Rectangle {
     }
 }
 const rectangleClass = new Rectangle(22,8);
-console.log(rectangleClass.getArea())
+console.log(rectangleClass.getArea());
+
+//////////////////////////////////////////
+class Book {
+    constructor(title,author,pages){
+        this.title = title,
+        this.author = author,
+        this.pages = pages
+    }
+    getTitleAndAuthor(){
+        return `Name: ${this.title}, author: ${this.author}, pages:${this.pages}`
+    }
+}
+const bookClass = new Book('Garry','Julian',275);
+console.log(bookClass.getTitleAndAuthor())
+
+///////////////////////////////////////////
+class Car {
+    constructor(brand,model,year){
+        this.brand = brand,
+        this.model = model,
+        this.year = year
+    }
+    getInfo(){
+        return `Brand:${this.brand}, model:${this.model},year:${this.year}`
+    }
+}
+const carClass = new Car('Toyota','Camry',2015);
+console.log(carClass.getInfo())
