@@ -50,4 +50,23 @@ class Car {
     }
 }
 const carClass = new Car('Toyota','Camry',2015);
-console.log(carClass.getInfo())
+console.log(carClass.getInfo());
+
+///////////////////////////////////////////
+class Fruit {
+    constructor(name){
+        this.name = name
+    }
+}
+class Apple extends Fruit {
+    constructor(name,type){
+        super(name)
+        this.name = name,
+        this.type = type
+    }
+    getDescription(){
+        return `Fruit ${this.name} is ${this.type}`
+    }
+}
+const apple = new Apple('apple','green');
+console.log(apple.getDescription())
