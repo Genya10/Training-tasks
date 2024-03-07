@@ -42,3 +42,22 @@ findUser('admin')
 .catch(error => {
     console.error(error);
 })
+
+//////////////////////
+async function  fetchUserData(userId){
+   return fetch(`https://jsonplaceholder.typicode.com/users/{userId}`)
+   .then(response =>{
+    if(!response.ok){
+        throw new Error('Error load')
+    }
+    return response.json();
+   })
+}
+const userId = 1;
+fetchUserData(userId)
+.then(userId=>{
+    console.log('Data about user:',userData);
+})
+.catch(error=>{
+    console.error('Happened error:', error)
+})
