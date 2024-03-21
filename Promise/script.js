@@ -61,3 +61,13 @@ fetchUserData(userId)
 .catch(error=>{
     console.error('Happened error:', error)
 })
+
+/////////////////////////////////////
+async function fetchUser(){
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/2')
+    console.log(response)
+    const data = await response.json()
+    console.log(data)
+}
+
+fetchUser()
