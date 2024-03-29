@@ -30,7 +30,7 @@ coffee.then(data=>{
 }).catch(error=>console.log(error));*/
 
 ///////////////////////////////////////////
-const family = [
+/*const family = [
     { member: 'mother', id: 1, coffee: 'Latte' },
     { member: 'father', id: 2, coffee: 'Espresso' },
     { member: 'son', id: 3, coffee: 'Cappucino' },
@@ -71,4 +71,50 @@ getMember(2)
 .then(newMember => {
     console.log('newMember > ', newMember)
 })
-.catch(error => console.log(error))
+.catch(error => console.log(error))*/
+
+///////////////////////////////////////////
+const makeCoffee = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Your coffee is ready!')
+        }, 1000)
+    })
+}
+
+const makeToast = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Your toast is ready!')
+        }, 2000)
+    })
+}
+
+const coffeeReady = makeCoffee();
+const toastReady = makeToast();
+
+/*coffeeReady.then(data=>{
+    console.log(data)
+});
+toastReady.then(data=>{
+    console.log(data)
+})*/
+
+Promise.all([coffeeReady, toastReady]).then(data => {
+    console.log(data)
+})
+
+Promise.all([coffeeReady, toastReady])
+    .then(([coffeeReady, toastReady]) => {
+        console.log(coffeeReady, toastReady)
+    })
+
+////////////////////////////////////
+const beersPromise = fetch('https://api.sampleapis.com/beers/ale');
+const winePromise = fetch('https://api.sampleapis.com/wines/reds');
+
+Promise.all([beersPromise, winePromise])
+    .then(data => Promise.all(data.map(res => res.json())))
+    .then(finalData => {
+        console.log(finalData)
+    })
