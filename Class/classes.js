@@ -1,4 +1,4 @@
-class Animal {
+/*class Animal {
     constructor(options){
         this.name = options.name
         this.age = options.age
@@ -46,7 +46,7 @@ const dog = new Dog({
     console.log('I am changed')
 }*/
 
-console.log(dog)
+/*console.log(dog)
 
 class Building {
     constructor(build){
@@ -86,4 +86,6 @@ console.log(home)
 
 console.log(home.floorInfo)
 home.floorInfo = {newFloor:12,newColor:'Green'}
-console.log(home.floorInfo)
+console.log(home.floorInfo)*/
+
+
