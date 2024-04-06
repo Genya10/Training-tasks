@@ -27,6 +27,10 @@ class Dog extends Animal{
             this.color = options.color
             this.eyes = options.eyes
     }
+    voice(){
+        super.voice()
+        console.log('I am a good dog))')
+    }
 }
 
 const dog = new Dog({
@@ -35,7 +39,13 @@ const dog = new Dog({
     hasTail:false,
     color:'gray',
     eyes:'blue'
-})
+},
+)
+
+/*dog.voice = function(){
+    console.log('I am changed')
+}*/
+
 console.log(dog)
 
 class Building {
@@ -55,6 +65,16 @@ class Home extends Building {
         this.floor = build.floor
         this.color = build.color
     }
+
+    get floorInfo(){
+        return {
+            floor:this.floor * 5,
+            color:this.color}
+    }
+    set floorInfo({newFloor, newColor}){
+        this.floor = newFloor,
+        this.color = newColor
+       }   
 }
 
 const home = new Home({
@@ -64,3 +84,6 @@ const home = new Home({
 })
 console.log(home)
 
+console.log(home.floorInfo)
+home.floorInfo = {newFloor:12,newColor:'Green'}
+console.log(home.floorInfo)
