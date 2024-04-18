@@ -55,3 +55,23 @@ for (let i = 0; i < 4; i++) {
     put_2 += '<br>'
 }
 document.querySelector('.put-2').innerHTML = put_2;
+
+///////////////////////////
+let put_3 = '';
+let k = 1;
+let f = 16;
+for (let i = 0; i < 5; i++) {
+    for (let j = 0; j < 18; j++) {
+        if (j <= k || j >= f) put_3 += '* ';
+        else put_3 += '1'
+    }
+    k = k + 2;
+    f = f - 2;
+    put_3 += '<br>'
+}
+document.querySelector('.put-3').innerHTML = put_3;
+
+/// j= 1 k= 3  f= 14
+/// j= 2 k= 5  f= 12
+/// j= 3 k= 7  f= 10
+/// j= 4 k= 9  f= 8
