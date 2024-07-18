@@ -1,27 +1,57 @@
 class T01 {
   private _n1: number = 33;
   private _n2: number = 55;
+
   public get n1(): number{
     return this._n1
   }
     public get n2():number {
    return this._n1 + this._n2
   }
+  public set n1(a:number){
+    this._n1 = a;
+  }
 }
 
 const obj1 = new T01();
 console.log(obj1.n1);
+obj1.n1 = 555;
+console.log(obj1.n1)
 
-class T02 extends T01{}
+class T02 extends T01{
+  public get n1():number{
+    return super.n1
+  }
+  public set n1(a:number){
+    super.n1 = a
+  }
+}
 
-const obj2 = new T02();
-console.log(obj2.n2)
+const obj2 = new T02()
+console.log(obj2.n1)
+obj2.n1 = 1000
+console.log(obj2.n1)
 
+class T03 {
+  protected _n1: number = 33;
+  protected _n2: number = 55;
 
+  public get n1(): number{
+    return this._n1
+  }
+    public get n2():number {
+   return this._n1 + this._n2
+  }
+  public set n1(a:number){
+    this._n1 = a;
+  }
+}
 
+const obj3 = new T03();
+console.log(obj3.n1)
 
 ///////////////////////////////
-class Person {
+/*class Person {
   name:string;
   age:number
   constructor(name:string, age:number){

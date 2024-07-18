@@ -22,6 +22,9 @@ var T01 = /** @class */ (function () {
         get: function () {
             return this._n1;
         },
+        set: function (a) {
+            this._n1 = a;
+        },
         enumerable: false,
         configurable: true
     });
@@ -36,42 +39,87 @@ var T01 = /** @class */ (function () {
 }());
 var obj1 = new T01();
 console.log(obj1.n1);
+obj1.n1 = 555;
+console.log(obj1.n1);
 var T02 = /** @class */ (function (_super) {
     __extends(T02, _super);
     function T02() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    Object.defineProperty(T02.prototype, "n1", {
+        get: function () {
+            return _super.prototype.n1;
+        },
+        set: function (a) {
+            _super.prototype.n1 = a;
+        },
+        enumerable: false,
+        configurable: true
+    });
     return T02;
 }(T01));
 var obj2 = new T02();
-console.log(obj2.n2);
-///////////////////////////////
-var Person = /** @class */ (function () {
-    function Person(name, age) {
-        this.name = name,
-            this.age = age;
+console.log(obj2.n1);
+obj2.n1 = 1000;
+console.log(obj2.n1);
+var T03 = /** @class */ (function () {
+    function T03() {
+        this._n1 = 33;
+        this._n2 = 55;
     }
-    Person.prototype.greet = function () {
-        console.log("Hello, my name is ".concat(this.name, " and \n      I am ").concat(this.age, " years old."));
-    };
-    return Person;
+    Object.defineProperty(T03.prototype, "n1", {
+        get: function () {
+            return this._n1;
+        },
+        set: function (a) {
+            this._n1 = a;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(T03.prototype, "n2", {
+        get: function () {
+            return this._n1 + this._n2;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return T03;
 }());
-var person = new Person('Jack', 33);
-person.greet();
-var Person2 = /** @class */ (function (_super) {
-    __extends(Person2, _super);
-    function Person2(name, age, work) {
-        var _this = _super.call(this, name, age) || this;
-        _this.work = work;
-        return _this;
-    }
-    Person2.prototype.employee = function () {
-        console.log("My name is ".concat(this.name, ", I am ").concat(this.age, " \n           old and i am ").concat(this.work));
-    };
-    return Person2;
-}(Person));
-var worker = new Person2('Andrew', 33, true);
-worker.employee();
+var obj3 = new T03();
+console.log(obj3.n1);
+///////////////////////////////
+/*class Person {
+  name:string;
+  age:number
+  constructor(name:string, age:number){
+    this.name = name,
+    this.age = age;
+  }
+  greet(){
+    console.log(`Hello, my name is ${this.name} and
+      I am ${this.age} years old.`)
+  }
+}
+
+const person = new Person('Jack',33)
+person.greet()
+
+class Person2 extends Person {
+  work:boolean;
+  constructor(name:string, age:number, work:boolean){
+    super(name,age);
+    this.work = work
+  }
+    employee(){
+      console.log(`My name is ${this.name}, I am ${this.age}
+           old and i am ${this.work}`)
+  }
+}
+
+const worker = new Person2('Andrew', 33, true)
+worker.employee()
+
 /*class T01 {
   private _n1: number = 44;
   private _n2: number = 77;

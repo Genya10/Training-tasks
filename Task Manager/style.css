@@ -1,0 +1,17 @@
+.tasks-grids{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.block{
+    height: 30vh;
+}
+.tasks-blocks_new{
+  background-color: gray;
+}
+.tasks-blocks_in-progress{
+  background-color: yellow;
+}
+.tasks-blocks_done{
+    background-color: green;
+}
