@@ -31,3 +31,30 @@ function initial (){
         task.append(h);
     }
 }
+
+console.log('Hello')
+
+function getSubstring(string, length){
+  const substring = string.slice(2, length)
+
+  return substring
+}
+
+console.log(getSubstring("Hi, Jonhy, how are yoy?", 8))
+console.log(getSubstring("Hi, Jonhy, how are yoy?", 12))
+console.log(getSubstring("Hi, Jonhy, how are yoy?", 3))
+
+///////////////////////////////////////////////////////
+function formatMessage(message, maxLength){
+    let result;
+    if(message.length <= maxLength){
+        result = message
+    } else {
+        result  = message.slice(0, maxLength) + '...'
+    }
+    return result
+}
+
+console.log(formatMessage('Hi, Jonhy, how are you?', 14))
+console.log(formatMessage('Hi, Jonhy, how are you?', 33))
+
