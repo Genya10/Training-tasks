@@ -41,7 +41,7 @@ function checkForSpam(message) {
        } else {
          result = false
        }
-        // Change code above this line
+   
         return result;
       }
 
@@ -49,3 +49,13 @@ function checkForSpam(message) {
   console.log( checkForSpam("Latest technology news"))
   console.log( checkForSpam("Get best Sale offers now!"))
   console.log(checkForSpam("Trust me, this is not a spam message"))
+
+  ////////////////////////////////////
+   function findSubStr(str, word){
+     return str.indexOf(word)
+   }
+
+   const sentence = 'Finding the last occurrence of a character or substring.'
+   const letter = 'a'
+
+   console.log(findSubStr(sentence, letter))
