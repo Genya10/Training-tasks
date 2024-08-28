@@ -38,3 +38,7 @@ console.log(str7.padStart(5,'0'))
 /////////////////////////
 const str8 = 'cve'
 console.log(str8.padEnd(10,' isgood'))
+
+const text = 'You need to buy book in this shop.This book about people'
+const strMatch = text.match(/book/g)
+console.log(strMatch)
