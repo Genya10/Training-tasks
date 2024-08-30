@@ -1,4 +1,4 @@
-//find\
+//find
 const arr1 = [2,4,6,8,10,12,14,16]
 const arrFind = arr1.find(num => num > 10)
 console.log(arrFind)

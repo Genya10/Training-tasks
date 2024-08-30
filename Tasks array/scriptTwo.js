@@ -53,3 +53,12 @@ const books = [
   }
 
   console.log(books)
+
+  
+//split 
+const shoppingList = "milk, bread; eggs/ cheese";
+console.log(shoppingList.split(/[,;/]/))
+
+//split
+const text = "apple, banana, cherry, pear";
+console.log(text.split(',',2))
